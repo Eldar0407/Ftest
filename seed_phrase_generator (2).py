@@ -17,7 +17,7 @@ def create_wallets_bip39(num_wallets, num_words):
         raise ValueError("Number of words must be 12, 15, 18, 21, or 24")
 
     mnemo = Mnemonic("english")
-    for _ in range(num_wallets):
+    for i in range(num_wallets):
         # Генерируем новый аккаунт
         seed = mnemo.generate(strength=num_words * 32 // 3)
         mnemonic_words = seed
@@ -32,7 +32,7 @@ def create_wallets_bip39(num_wallets, num_words):
 
 
 # Количество кошельков для генерации
-num_wallets = 100
+num_wallets = 50
 # Количество слов в seed phrase
 num_words = 12
 
